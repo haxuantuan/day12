@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pldnfl0xd7j1m6wadSf5EefcQ5x99U-NCQ&usqp=CAU">
+    <title>Document</title>
+</head>
+<body>
+        <h1 class="title">CUSTOM RANGE SLIDER</h1>
+        <div  class="range">
+           <span  style="width: 40%;">40%</span>
+        </div>
+    <script>
+        var body=document.querySelector('body')
+        var span=document.querySelector('span')
+        var range=document.querySelector('.range')
+        range.onmousemove=function(e){
+            console.log(e.target)
+            var value=Math.ceil(((e.pageX-this.offsetLeft)/604)*100);
+            var value2=value/100;
+            console.log(value)
+            span.style.width=value+'%'
+            span.innerText=value+'%'
+            body.style.background=`rgba(0,0,0,${value2})`
+        }
+    </script>
+</body>
+</html>
